@@ -12,19 +12,36 @@
     <style>
         img {
             height: 150px;
-            float: left;
         }
 
+
+
         article {
-            clear: both;
             border: solid black;
             padding: 0 10px;
         }
 
+        /*        giver hvert 2. element en baggrundsfarve*/
+        article:nth-child(2n) {
+            background-color: #74a9ff;
+        }
+
         section {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 10px;
+        }
+
+        @media screen and (min-width:480px) {
+            section {
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 10px;
+            }
+        }
+
+        @media screen and (min-width:700px) {
+            section {
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 10px;
+            }
         }
     </style>
     <section class="data-container"></section>
@@ -44,6 +61,7 @@
             <img src="" alt="">
         </article>
     </template>
+
     <script>
         document.addEventListener("DOMContentLoaded", hentJson);
 
