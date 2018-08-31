@@ -12,6 +12,11 @@
     <style>
         img {
             height: 150px;
+            float: left;
+        }
+
+        article {
+            clear: both;
         }
     </style>
     <section class="data-container"></section>
@@ -52,6 +57,8 @@
                 let klon = temp.cloneNode(true).content;
                 klon.querySelector("h2").textContent = person.navn;
                 klon.querySelector(".data-github").textContent = person.github;
+                klon.querySelector(".data-mail").textContent = person.mail;
+                klon.querySelector(".data-mail").href = "mailto:" + person.mail;
                 //jeg har tilføjet "www." til den angivet URL.
                 klon.querySelector("a").href = "www." + person.website;
                 klon.querySelector(".data-address").textContent = person.adresse;
